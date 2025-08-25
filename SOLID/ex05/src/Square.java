@@ -1,5 +1,17 @@
 
-public class Square extends Rectangle {
-    @Override void setWidth(int w){ this.w = this.h = w; }
-    @Override void setHeight(int h){ this.w = this.h = h; }
+public class Square implements IShape {
+    private int side;
+    
+    @Override
+    public int getArea() {
+        return side * side;
+    }
+    
+    @Override
+    public void resize(int width, int height) {
+        if (width != height) {
+            System.out.println("Warning: Square sides must be equal. Using width value.");
+        }
+        this.side = width;
+    }
 }

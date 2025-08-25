@@ -1,6 +1,14 @@
-public class Rectangle {
-    protected int w,h;
-    void setWidth(int w){ this.w = w; }
-    void setHeight(int h){ this.h = h; }
-    int area(){ return w*h; }
+public class Rectangle implements IShape {
+    protected int w, h;
+    
+    @Override
+    public int getArea() {
+        return w * h;
+    }
+    
+    @Override
+    public void resize(int width, int height) {
+        this.w = width;
+        this.h = height;
+    }
 }

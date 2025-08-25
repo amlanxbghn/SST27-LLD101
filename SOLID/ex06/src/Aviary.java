@@ -1,3 +1,11 @@
-class Aviary {public 
-    void release(Bird b){ b.fly(); System.out.println("Released"); }
+class Aviary {
+    public void release(IFlyable flyable) {
+        flyable.fly();
+        System.out.println("Released");
+    }
+    
+    public void release(IBird bird) {
+        bird.makeSound();
+        System.out.println("Released (non-flying bird)");
+    }
 }
